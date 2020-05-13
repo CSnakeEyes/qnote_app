@@ -20,3 +20,22 @@ Text setAppTitle(String title) {
     )
   );
 }
+
+Text setProfileHeadingText(String heading) {
+  return Text(
+    heading,
+    style: GoogleFonts.fredokaOne(
+      textStyle: TextStyle(fontSize: 20)
+    )
+  );
+}
+
+Text setButtonText(String value) {
+  return Text(
+    value,
+    style: GoogleFonts.fredokaOne(
+      textStyle: TextStyle(fontSize: 15),
+      color: Colors.white,
+    )
+  );
+}

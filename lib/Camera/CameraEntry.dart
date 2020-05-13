@@ -18,11 +18,8 @@ class CameraEntry extends StatelessWidget {
 
     MaterialButton goBackButton() {
       return MaterialButton(
-        child: Text(
-          'Go Back',
-          style: TextStyle(color: Colors.white),
-          ),
-        color: Colors.green,
+        child: setButtonText("Go Back"),
+        color: Colors.red[600],
         onPressed: (){
           Navigator.pop(context);
         } 
@@ -38,10 +35,7 @@ class CameraEntry extends StatelessWidget {
 
     MaterialButton saveButton(BuildContext context) {
       return MaterialButton(
-        child: Text(
-          'Save',
-          style: TextStyle(color: Colors.white),
-          ),
+        child: setButtonText("Save"),
         color: Colors.green,
         onPressed: (){
           List<String> images = List<String>.from(cloudDB.imagePaths);

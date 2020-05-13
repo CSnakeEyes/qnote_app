@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/ProfilePage.dart';
 import 'package:notes_app/utils.dart';
 import 'BaseAuth.dart';
 import 'Camera/Camera.dart';
@@ -60,7 +61,12 @@ class _HomePageState extends State<HomePage> {
   Widget _profileButton() {
     return IconButton(
       icon: Icon(Icons.person),
-      onPressed: (){},
+      onPressed: (){
+        Navigator.push(
+          context, 
+          MaterialPageRoute(builder: (context) => ProfilePage())
+        );
+      },
     );
   }
 
