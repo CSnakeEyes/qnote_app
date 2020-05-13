@@ -24,32 +24,38 @@ class _FilesState extends State<Files> {
               }
               var folders = snapshot.data.documents;
               return ListView(
-                children: folders.map<Widget>((folder) => buildListItem(context, folder)).toList(),
+                children: folders.map<Widget>((folder) => _buildCardItem(context, folder)).toList(),
               );
             },
           ),
         ),]
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(
-          Icons.add,
-          color: Colors.white
-        ),
-        onPressed:(){}
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon(
+      //     Icons.add,
+      //     color: Colors.white
+      //   ),
+      //   onPressed:(){}
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
-  Widget buildListItem(BuildContext context, DocumentSnapshot snapshot) {
-    return ListTile(
-      title: Text('${snapshot.reference.documentID}'),
+  Widget _buildCardItem(BuildContext context, DocumentSnapshot snapshot) {
+    return GestureDetector(
       onTap: () {
         Navigator.push(
           context, 
           MaterialPageRoute(builder: (context) => FilesList(folderName: snapshot.reference.documentID))
         );
       },
-    );
+        child: Card(
+          elevation: 3.0,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text('${snapshot.reference.documentID}'),
+          ),
+        ),
+      );
   }
 }

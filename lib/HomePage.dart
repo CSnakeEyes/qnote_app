@@ -3,6 +3,7 @@ import 'package:notes_app/utils.dart';
 import 'BaseAuth.dart';
 import 'Camera/Camera.dart';
 import 'Files/Files.dart';
+import 'Files/FilesList.dart';
 import 'People/People.dart';
 
 // void main() => runApp(MyApp());
@@ -49,12 +50,30 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  Widget _logOutButton() {
+    return IconButton(
+      icon: Icon(Icons.exit_to_app),
+      onPressed: (){},
+    );
+  }
+
+  Widget _profileButton() {
+    return IconButton(
+      icon: Icon(Icons.person),
+      onPressed: (){},
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: setAppTitle('QNote'),
+        leading: _profileButton(),
+        actions: <Widget>[
+          _logOutButton(),
+        ],
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),

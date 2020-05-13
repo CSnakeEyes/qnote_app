@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 import '../CloudDBWorker.dart';
+import '../utils.dart';
 
 class FilesList extends StatelessWidget {
   final String folderName;
@@ -12,6 +13,10 @@ class FilesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: setAppTitle('Notes'),
+      ),
       body: Column(
         children: <Widget> [
           Expanded(
@@ -23,20 +28,14 @@ class FilesList extends StatelessWidget {
               }
               var images = snapshot.data['images'];
               print(images);
-              // return GridView.count(
-              //   padding: EdgeInsets.all(10.0),
-              //   primary: false,
-              //   crossAxisCount: 2,
-              //   crossAxisSpacing: 10.0,
-              //   mainAxisSpacing: 10.0,
-              //   shrinkWrap: true,
-              //   children: images.map<Widget>((image) => _buildCardItem(image)).toList(),
-              // );
-              return ListView.builder(
-                itemCount: images.length,
-                itemBuilder: (context, image) {
-                  return buildListItem(context, images[image]);
-                },
+              return GridView.count(
+                padding: EdgeInsets.all(10.0),
+                primary: false,
+                crossAxisCount: 2,
+                crossAxisSpacing: 10.0,
+                mainAxisSpacing: 10.0,
+                shrinkWrap: true,
+                children: images.map<Widget>((image) => _buildCardItem(image)).toList(),
               );
             },
           ),
@@ -50,39 +49,13 @@ class FilesList extends StatelessWidget {
       onTap: () {},
       child: Card(
         elevation: 8.0,
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Expanded(
-                child: Card(
-                    clipBehavior: Clip.antiAlias,
-                    child: ClipRRect(
-                      child: Image.file(
-                        File(imagePath),
-                        fit: BoxFit.cover,
-                      ),
-                    )),
-              ),
-              Container(
-                padding: const EdgeInsets.all(5.0),
-                child: Text(
-                  'Test',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-              )
-            ]),
+        child: Card(
+          clipBehavior: Clip.antiAlias,
+            child: ClipRRect(
+              child: Text('Image Place holder'),
+            ),
+        )
       ),
-    );
-  }
-
-  // List<Widget> _buildGrid(List<String> images) {
-  //   return pets.map((pet) => _buildCardItem(pet, model)).toList();
-  // }
-
-  Widget buildListItem(BuildContext context, String imagePath) {
-    return ListTile(
-      title: Text('$imagePath'),
     );
   }
 }

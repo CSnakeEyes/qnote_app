@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:notes_app/CloudDBWorker.dart';
 import 'package:notes_app/utils.dart';
 
@@ -43,10 +44,11 @@ class CameraEntry extends StatelessWidget {
           ),
         color: Colors.green,
         onPressed: (){
-          List<String> images = new List<String>.from(cloudDB.imagePaths);
+          List<String> images = List<String>.from(cloudDB.imagePaths);
           images.add(imagePath);
           cloudDB.imagePaths = images;
           cloudDB.saveInCloud('test');
+          ImageGallerySaver.saveFile(imagePath);
           // Scaffold.of(context).showSnackBar(_successSnackBar());
           Navigator.pop(context);
         } 
