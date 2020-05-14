@@ -4,12 +4,18 @@ import 'BaseAuth.dart';
 import 'HomePage.dart';
 import 'LoginRegisterPage.dart';
 
+/// enum that determines the status of authentication
 enum AuthStatus {
   NOT_DETERMINED,
   NOT_LOGGED_IN,
   LOGGED_IN,
 }
 
+/// root page that based on the status of authentication,
+/// chooses what page to go to next
+/// NOT_LOGGED_IN - back to register/login page
+/// LOGGED-IN - goes to home page
+/// NOT_DETERMINED - waiting screen
 class RootPage extends StatefulWidget {
   RootPage({this.auth});
 

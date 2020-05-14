@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'BaseAuth.dart';
 
+/// login/register page takes care of the login and register form
+/// uses BaseAuth class to connect to Firebase Database
 class LoginRegisterPage extends StatefulWidget {
   LoginRegisterPage({this.auth, this.loginCallback});
 
@@ -60,6 +62,9 @@ class _LoginRegisterPage extends State<LoginRegisterPage> {
     return false;
   }
 
+  /// method validates the user's information and either
+  /// signs them up or signs them in
+  /// otherwise an error is caught
   void _validateAndSubmit() async {
     setState(() {
       _errorMessage = "";

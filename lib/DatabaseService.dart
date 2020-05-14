@@ -1,6 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:notes_app/People/PeopleList.dart';
 
+
+/// DatabaseService is a class for the Friends tab to take care of
+/// firebase database functions like creating the collections
+/// and adding friends' contacts to the db
 class DatabaseService {
 
   final String uid;
