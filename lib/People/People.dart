@@ -3,6 +3,9 @@ import 'package:provider/provider.dart';
 import '../DatabaseService.dart';
 import 'PeopleList.dart';
 
+
+/// main tab for People/Friends tab, calls PeopleList to create
+/// the list view of all the friends inside the db
 class People extends StatefulWidget {
   @override
   _PeopleState createState() => _PeopleState();
@@ -14,7 +17,7 @@ class _PeopleState extends State<People> {
     return StreamProvider<List<Friend>>.value(
       value: DatabaseService().friends,
       child: Scaffold(
-        body: PeopleList(), ///Center(child: setMainTabText('Start adding friends!')),
+        body: PeopleList(),
         floatingActionButton: FloatingActionButton(
           child: Icon(
             Icons.add,
@@ -37,6 +40,8 @@ void _showAddPanel(BuildContext c) {
   });
 }
 
+/// AddFriend class takes care of creating the Form inside of a
+/// ModalBottomSheet to add friends using the floating add button
 class AddFriend extends StatefulWidget {
   @override
   _AddFriendState createState() => _AddFriendState();

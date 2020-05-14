@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+
+/// PeopleList creates the List containing the list tiles
+/// of the friends' information
 class PeopleList extends StatefulWidget {
 
   @override
@@ -23,6 +26,9 @@ class _PeopleListState extends State<PeopleList> {
   }
 }
 
+
+/// FriendTile sets the friends' information in a nice
+/// setup so they show on the People List
 class FriendTile extends StatelessWidget {
 
   final Friend friend;
