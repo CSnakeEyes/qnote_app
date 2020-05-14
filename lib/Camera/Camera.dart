@@ -1,3 +1,10 @@
+///
+/// App Name: QNote
+/// Authors: Stefany Carrillo & Cristian Ayub
+/// Instructor: Dr. Yonsiik Cheon
+/// Course: CS 4320/5318
+///
+
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:notes_app/CloudDBWorker.dart';
@@ -17,6 +24,7 @@ class _CameraState extends State<Camera> {
   CameraController cameraController;
   CloudDBWorker cloudDB = CloudDBWorker();
 
+  /// Sets initial state for the class whenever is initialized
   @override
   void initState() {
     super.initState();
@@ -25,6 +33,7 @@ class _CameraState extends State<Camera> {
     });
   }
 
+  /// Cleans up the controller when the Widget is disposed
   void dispose() {
     cameraController?.dispose();
     super.dispose();

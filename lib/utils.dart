@@ -1,7 +1,14 @@
+///
+/// App Name: QNote
+/// Authors: Stefany Carrillo & Cristian Ayub
+/// Instructor: Dr. Yonsiik Cheon
+/// Course: CS 4320/5318
+///
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
+/// Adds text to the screen of the BottomNavigationBar tab
 Text setMainTabText(String heading) {
   return Text(
     heading,
@@ -12,6 +19,7 @@ Text setMainTabText(String heading) {
   );
 }
 
+/// Adds text to the title of the appbar
 Text setAppTitle(String title) {
   return Text(
     title,
@@ -21,6 +29,7 @@ Text setAppTitle(String title) {
   );
 }
 
+/// Adds text to the headings in the profile page
 Text setProfileHeadingText(String heading) {
   return Text(
     heading,
@@ -30,6 +39,7 @@ Text setProfileHeadingText(String heading) {
   );
 }
 
+/// Adds text to the buttons
 Text setButtonText(String value) {
   return Text(
     value,

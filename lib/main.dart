@@ -1,3 +1,10 @@
+///
+/// App Name: QNote
+/// Authors: Stefany Carrillo & Cristian Ayub
+/// Instructor: Dr. Yonsiik Cheon
+/// Course: CS 4320/5318
+///
+
 import 'package:flutter/material.dart';
 import 'BaseAuth.dart';
 import 'RootPage.dart';

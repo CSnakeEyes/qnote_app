@@ -1,3 +1,10 @@
+///
+/// App Name: QNote
+/// Authors: Stefany Carrillo & Cristian Ayub
+/// Instructor: Dr. Yonsiik Cheon
+/// Course: CS 4320/5318
+///
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CloudDBWorker {
@@ -7,10 +14,12 @@ class CloudDBWorker {
 
   CloudDBWorker();
 
+  /// Retrieves images stored in cloud
   void getImagesFromCloud() {
     databaseReference.collection('folders').document('test').get().then((v) => imagePaths = v.data["images"]);
   }
 
+  /// Saves images in the indicated folder on the cloud
   void saveInCloud(String folder) async {
     try {
       await databaseReference

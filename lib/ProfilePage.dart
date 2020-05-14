@@ -1,3 +1,10 @@
+///
+/// App Name: QNote
+/// Authors: Stefany Carrillo & Cristian Ayub
+/// Instructor: Dr. Yonsiik Cheon
+/// Course: CS 4320/5318
+///
+
 import 'package:flutter/material.dart';
 
 import 'utils.dart';
@@ -174,13 +181,14 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
     );
   }
 
+  /// Cleans up the controller when the Widget is disposed
   @override
   void dispose() {
-    // Clean up the controller when the Widget is disposed
     myFocusNode.dispose();
     super.dispose();
   }
 
+  /// Creates the buttons for saving/canceling changes in user's personal information
   Widget _getActionButtons() {
     return Padding(
       padding: EdgeInsets.only(left: 25.0, right: 25.0, top: 45.0),
@@ -233,6 +241,7 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
     );
   }
 
+  /// Creates edit button in profile page
   Widget _getEditIcon() {
     return GestureDetector(
       child: CircleAvatar(

@@ -1,28 +1,17 @@
+///
+/// App Name: QNote
+/// Authors: Stefany Carrillo & Cristian Ayub
+/// Instructor: Dr. Yonsiik Cheon
+/// Course: CS 4320/5318
+///
+
 import 'package:flutter/material.dart';
 import 'package:notes_app/ProfilePage.dart';
 import 'package:notes_app/utils.dart';
 import 'BaseAuth.dart';
 import 'Camera/Camera.dart';
 import 'Files/Files.dart';
-import 'Files/FilesList.dart';
 import 'People/People.dart';
-
-// void main() => runApp(MyApp());
-
-// class MyApp extends StatelessWidget {
-  
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Flutter Demo',
-//       theme: ThemeData(
-//         primarySwatch: Colors.green,
-//       ),
-//       home: MyHomePage(),
-//     );
-//   }
-// }
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.auth, this.userId, this.logoutCallback})
@@ -45,12 +34,14 @@ class _HomePageState extends State<HomePage> {
     People(),
   ];
 
+  /// Allows selection of BottomNavigationBar
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
 
+  /// Creates logout button
   Widget _logOutButton() {
     return IconButton(
       icon: Icon(Icons.exit_to_app),
@@ -60,6 +51,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  /// Ends user session in the app
   _signOut() async {
     try {
       await widget.auth.signOut();
@@ -69,6 +61,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  /// Creates profile button
   Widget _profileButton() {
     return IconButton(
       icon: Icon(Icons.person),

@@ -1,3 +1,10 @@
+///
+/// App Name: QNote
+/// Authors: Stefany Carrillo & Cristian Ayub
+/// Instructor: Dr. Yonsiik Cheon
+/// Course: CS 4320/5318
+///
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -16,6 +23,7 @@ class CameraEntry extends StatelessWidget {
 
     cloudDB.getImagesFromCloud();
 
+    /// Creates 'Go back' button   
     MaterialButton goBackButton() {
       return MaterialButton(
         child: setButtonText("Go Back"),
@@ -26,13 +34,15 @@ class CameraEntry extends StatelessWidget {
       );
     }
 
+    /// Generates a SnackBar for whenever an image has been saved in cloud
     SnackBar _successSnackBar() {
       return SnackBar(
         backgroundColor: Colors.black,
-        duration: Duration(seconds: 2), content: Text('Appointment saved'),
+        duration: Duration(seconds: 2), content: Text('Image Saved Successfully'),
       );
     }
 
+    /// Creates a 'Save' button
     MaterialButton saveButton(BuildContext context) {
       return MaterialButton(
         child: setButtonText("Save"),

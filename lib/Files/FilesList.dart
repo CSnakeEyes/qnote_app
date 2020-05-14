@@ -1,4 +1,9 @@
-import 'dart:io';
+///
+/// App Name: QNote
+/// Authors: Stefany Carrillo & Cristian Ayub
+/// Instructor: Dr. Yonsiik Cheon
+/// Course: CS 4320/5318
+///
 
 import 'package:flutter/material.dart';
 
@@ -44,6 +49,7 @@ class FilesList extends StatelessWidget {
     );
   }
 
+  /// Builds Card for GridView containing an image
   Widget _buildCardItem(String imagePath) {
     return GestureDetector(
       onTap: () {},
