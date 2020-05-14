@@ -54,8 +54,19 @@ class _HomePageState extends State<HomePage> {
   Widget _logOutButton() {
     return IconButton(
       icon: Icon(Icons.exit_to_app),
-      onPressed: (){},
+      onPressed: (){
+        _signOut();
+      },
     );
+  }
+
+  _signOut() async {
+    try {
+      await widget.auth.signOut();
+      widget.logoutCallback();
+    } catch(e) {
+      print(e);
+    }
   }
 
   Widget _profileButton() {
