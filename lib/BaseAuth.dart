@@ -16,7 +16,7 @@ abstract class BaseAuth {
   Future<bool> isEmailVerified();
 }
 
-/// authentitcation is the class for signing in and signing up
+/// authentication is the class for signing in and signing up
 /// users to the firebase database
 /// this class also calls DatabaseService to create the
 /// Friends collections
