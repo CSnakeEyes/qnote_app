@@ -35,7 +35,7 @@ class Authentication implements BaseAuth {
         password: password);
     FirebaseUser user = result.user;
 
-    await DatabaseService(uid: user.uid).makeCollections("name", "username");
+    await DatabaseService(uid: user.uid).updateFriendData("name", "username");
     return user.uid;
   }
 

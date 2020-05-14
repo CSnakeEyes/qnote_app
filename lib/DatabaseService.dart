@@ -8,15 +8,8 @@ class DatabaseService {
 
   final CollectionReference friendsCollection = Firestore.instance.collection('friends');
 
-  Future makeCollections(String name, String username) async {
-    return await friendsCollection.document(uid).collection('friend_list').document().setData({
-      'name': name,
-      'username': username,
-    });
-  }
-
   Future updateFriendData(String name, String username) async {
-    return await friendsCollection.document(uid).collection('friends_list').document().setData({
+    return await friendsCollection.document(uid).setData({
       'name': name,
       'username': username,
     });
@@ -32,7 +25,7 @@ class DatabaseService {
   }
 
   Stream<List<Friend>> get friends {
-    return friendsCollection.document(uid).collection('friend_list').snapshots()
+    return friendsCollection.snapshots()
       .map(_friendListFromSnapshot);
   }
 
